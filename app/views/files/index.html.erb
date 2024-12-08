@@ -1,0 +1,9 @@
+<h1>Welcome to Spotify Unwrapped</h1>
+
+<h2>You can look at the following pages:</h2>
+
+<ul>
+  <% @file_names.each do |file_name| %>
+    <li><%= link_to file_name, file_path(id: file_name) %></li>
+  <% end %>
+</ul>

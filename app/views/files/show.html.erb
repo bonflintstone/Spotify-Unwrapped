@@ -1,0 +1,9 @@
+<h1>Welcome to Spotify Unwrapped</h1>
+
+<h2>This is the data for <%= @account_data.file_name %></h2>
+
+<ul>
+  <% @account_data.streaming_history.each do |entry| %>
+    <li><%= entry %></li>
+  <% end %>
+</ul>
