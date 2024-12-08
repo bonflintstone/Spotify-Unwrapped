@@ -14,3 +14,7 @@ group :development, :test do
   gem "brakeman", require: false
   gem "rubocop-rails-omakase", require: false
 end
+
+gem "chartkick", "~> 5.1"
+
+gem "importmap-rails", "~> 2.0"

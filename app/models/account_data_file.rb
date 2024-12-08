@@ -10,12 +10,12 @@ class AccountDataFile
 
     Zip::File.open("data/#{@file_name}.zip") do |entries|
       entries.each do |entry|
-        next unless entry.name.match? /StreamingHistory_music.*\.json/
+        next unless entry.name.match? /Streaming_History_Audio.*\.json/
 
         result.push(*JSON.parse(entry.get_input_stream.read))
       end
     end
 
-    result
+    result.sort_by { _1['ts'] }
   end
 end

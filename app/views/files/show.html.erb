@@ -2,8 +2,18 @@
 
 <h2>This is the data for <%= @account_data.file_name %></h2>
 
+<p><%= @account_data.streaming_history.count %> Tracks</p>
+
+<%= column_chart(@account_data.by_country) %>
+
+<%= area_chart(@account_data.by_day) %>
+
+<%= column_chart(@account_data.accumulated_minutes) %>
+
+<%= line_chart(@account_data.top_artists_by_rank) %>
+
 <ul>
-  <% @account_data.streaming_history.each do |entry| %>
+  <% @account_data.streaming_history.first.each do |entry| %>
     <li><%= entry %></li>
   <% end %>
 </ul>
